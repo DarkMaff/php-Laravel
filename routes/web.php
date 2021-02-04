@@ -35,15 +35,15 @@ Route::get('/', 'PageController@inicio');// invoco al controlador para que me tr
 })->name('foto');*/
 
 //Route::get('galerias', 'PagesController@galerias')->name('foto');// le damos un nombre para ubicarlo mejor en los href y lo reubicamos al controlador PageController
-Route::get('galerias','App\Http\Controllers\PagesController@galerias')->name('foto');
+Route::get('galerias','PagesController@galerias')->name('foto');
 /*Route::get('multas', function () {
     return view('multas');
 })->name('multas');*/
 
-Route::get('multas','App\Http\Controllers\PagesController@datosmultas')->name('multas');
+Route::get('multas','PagesController@datosmultas')->name('multas');
 
 /*Route::get('datos', function () {
     return view('datos');
 })->name('datos');*/
 
-Route::get('datos','App\Http\Controllers\PagesController@datosVehiculos')->name('datos');
+Route::get('datos','PagesController@datosVehiculos')->name('datos');
