@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Model;
 
 
 class PagesController extends Controller
@@ -13,15 +13,15 @@ class PagesController extends Controller
     }
 
     public function galerias(){
-        return view('fotos');
-        
+        return view('fotos');       
     }
 
     public function datosMultas(){
         return view('multas');
     }
     public function datosVehiculos(){
-        return view('datos');
+        $datos = App/Vehiculos::all();
+        return view('datos',compact('datos'));
     }
     
 }
