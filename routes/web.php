@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\MultasController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
+use App\Models;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +21,7 @@ Route::get('/', function () {
 });*/
 
 
-Route::get('/', 'PageController@inicio');// invoco al controlador para que me traiga la ruta de una forma mas eficas
+Route::get('/', PagesController::class);// invoco al controlador para que me traiga la ruta de una forma mas eficas en laravel 8
 
 /*Route::get('fotos', function() {
     return 'estas en la ruta fotos';
@@ -35,15 +38,16 @@ Route::get('/', 'PageController@inicio');// invoco al controlador para que me tr
 })->name('foto');*/
 
 //Route::get('galerias', 'PagesController@galerias')->name('foto');// le damos un nombre para ubicarlo mejor en los href y lo reubicamos al controlador PageController
-Route::get('galerias','PagesController@galerias')->name('foto');
+Route::get('index',[MultasController::class ,'index'])->name('index');
+
 /*Route::get('multas', function () {
     return view('multas');
 })->name('multas');*/
 
-Route::get('multas','PagesController@datosmultas')->name('multas');
+Route::get('multas',[MultasController::class, 'datosMultas'])->name('multas');
 
 /*Route::get('datos', function () {
     return view('datos');
 })->name('datos');*/
 
-Route::get('datos','PagesController@datosVehiculos')->name('datos');
+Route::get('datos',[MultasController::class, 'datosVehiculos'])->name('datos');
