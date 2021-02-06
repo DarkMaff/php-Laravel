@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use App\Models\datos_vehiculos;
 
 class MultasController extends Controller
 {
@@ -14,9 +16,9 @@ class MultasController extends Controller
         return view('multas');
     }
     public function datosVehiculos(){
-        //$datos = datos_vehiculos::all();
-       // $users = DB::select('select * from users');
-        //return view('datos',compact('datos'));
-        return view('Datos');
+        $datos = datos_vehiculos::all();
+       // $datos = DB::select('select * from users');
+        return view('datos',compact('datos'));
+        //return $datos->toArray();
     }
 }

@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,37 +13,20 @@
   </head>
   <body>
     <div class="container">
-      <a href="{{ route('index') }}" class="btn btn-primary">Fotos</a>
+      <a href="{{ route('index') }}" class="btn btn-primary">Inicio</a>
       <a href="{{ route('multas') }}" class="btn btn-primary">Multas</a>
       <a href="{{ route('datos') }}" class="btn btn-primary">Datos</a>
     </div>
     <div class="container">
       @yield('seccion')
     </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#id</th>
-          <th scope="col">PATENTE</th>
-          <th scope="col">VEHICULO</th>
-          <th scope="col">VALOR PERMISO</th>
-          <th scope="col">INTERESES Y REAJUSTES</th>
-          <th scope="col">REGISTRO DE MULTAS IMPAGAS</th>
-          <th scope="col">SUBTOTAL</th>
-        </tr>
-      </thead>
-      <tbody>
-      
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-         
-        </tr>
+
+        <div class="container">
+        @yield('tabla')
+      </div>
+       
     
-      </tbody>
-    </table>
+    
     <div>footer</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

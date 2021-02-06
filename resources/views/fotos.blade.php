@@ -22,5 +22,5 @@
 @extends('plantillaprincipal')
 
 @section('seccion')
-<H1>Galerias Fotos</H1>
+<H1>Inicio</H1>
 @endsection
