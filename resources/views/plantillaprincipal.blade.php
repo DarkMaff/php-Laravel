@@ -9,13 +9,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <div class="container">
+      @yield('title')
+    </div>
+    
   </head>
   <body>
     <div class="container">
-      <a href="{{ route('index') }}" class="btn btn-primary">Inicio</a>
-      <a href="{{ route('multas') }}" class="btn btn-primary">Multas</a>
-      <a href="{{ route('datos') }}" class="btn btn-primary">Datos</a>
+      <a href="{{ route('index') }}" class="btn btn-primary">Crear</a>
+      <a href="{{ route('editar') }}" class="btn btn-primary">Editar</a>
+      <a href="{{ route('datos') }}" class="btn btn-primary">Consulta</a>
     </div>
     <div class="container">
       @yield('seccion')

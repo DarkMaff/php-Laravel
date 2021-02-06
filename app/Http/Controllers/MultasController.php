@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use App\Models\datos_vehiculos;
+use Illuminate\Support\Facades\Route;
 
 class MultasController extends Controller
 {
     public function index(){
-        return view('fotos');       
+        return view('Crear');       
+    }
+    public function crear(request $request){
+       $datos = new datos_vehiculos;
+       $datos->patente = $request->patente;
+       $datos->vehiculo = $request->vehiculo;
+       $datos->valor_permiso = $request->valor_permiso;
+       $datos->save();
+      return redirect('index');
     }
 
     public function datosMultas(){
@@ -17,7 +26,6 @@ class MultasController extends Controller
     }
     public function datosVehiculos(){
         $datos = datos_vehiculos::all();
-       // $datos = DB::select('select * from users');
         return view('datos',compact('datos'));
         //return $datos->toArray();
     }

@@ -1,7 +1,9 @@
 @extends('plantillaprincipal')
-
+@section('title')
+<title>Datos</title> 
+@endsection
 @section('seccion')
-<H1>Datos de Vehiculos</H1>
+<H1>Consulta de Datos</H1>
 @endsection
 
 @section('tabla')

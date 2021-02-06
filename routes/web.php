@@ -39,12 +39,13 @@ Route::get('/', PagesController::class);// invoco al controlador para que me tra
 
 //Route::get('galerias', 'PagesController@galerias')->name('foto');// le damos un nombre para ubicarlo mejor en los href y lo reubicamos al controlador PageController
 Route::get('index',[MultasController::class ,'index'])->name('index');
+Route::post('index',[MultasController::class ,'crear'])->name('patente.crear');
 
 /*Route::get('multas', function () {
     return view('multas');
 })->name('multas');*/
 
-Route::get('multas',[MultasController::class, 'datosMultas'])->name('multas');
+Route::get('editar',[MultasController::class, 'datosMultas'])->name('editar');
 
 /*Route::get('datos', function () {
     return view('datos');
