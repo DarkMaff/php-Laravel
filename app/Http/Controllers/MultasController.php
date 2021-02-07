@@ -22,7 +22,7 @@ class MultasController extends Controller
     }
 
     public function datosMultas(){
-        return view('multas');
+        return view('editar');
     }
     public function datosVehiculos(){
         $datos = datos_vehiculos::all();
