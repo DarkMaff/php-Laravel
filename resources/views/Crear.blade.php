@@ -25,7 +25,7 @@
 @endsection
 @section('seccion')
 <H1>Crear Datos</H1>
-<form action="{{route('patente.crear')}}" method="POST">
+<form action="{{route('crear.store')}}" method="POST">
     @csrf
     <input type="text" name="patente" placeholder="agregar Patente" class="form-control mb2">
     <input type="text" name="vehiculo" placeholder="agregar Modelo de Vehiculo" class="form-control mb2">

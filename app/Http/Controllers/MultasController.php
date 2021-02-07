@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Route;
 
 class MultasController extends Controller
 {
-    public function index(){
-        return view('Crear');       
+    public function crear(){
+        return view('crear');       
     }
-    public function crear(request $request){
+    public function store(request $request){
        $datos = new datos_vehiculos;
        $datos->patente = $request->patente;
        $datos->vehiculo = $request->vehiculo;
        $datos->valor_permiso = $request->valor_permiso;
        $datos->save();
-      return redirect('index');
+      return redirect('crear');
     }
 
     public function datosMultas(){
