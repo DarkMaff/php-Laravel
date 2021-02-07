@@ -29,8 +29,13 @@
   <td>{{$item->intereses_ajustes}}</td>
   <td>{{$item->multas_impagas}}</td>
   <td>{{$item->subtotal}}</td>
-  <td><a href="{{route('editar',$item->id)}}" class="btn btn-primary">Editar</a></td>
-  <td><a href="{{$item->id}}" class="btn btn-primary">Eliminar</a></td> 
+  <td><a href="{{route('editar',$item->id)}}" class="btn btn-primary btn-sm">Editar</a></td>
+  <form action="{{route('eliminar',$item->id)}}" method="POST">
+    @csrf
+    @method('delete')
+    <td><button class="btn btn-danger btn-sm" type="submit">Eliminar</button></td>
+    </form>
+
 </tr>
       @endforeach
 </thead>

@@ -53,4 +53,5 @@ Route::get('editar/{id?}',[MultasController::class, 'datosMultas'])->name('edita
 
 Route::get('datos',[MultasController::class, 'datosVehiculos'])->name('datos');
 
-Route::post('datos/{datos}', [MultasController::class, 'update'])->name('update');
+Route::put('datos/{datos}', [MultasController::class, 'update'])->name('update');
+Route::delete('datos/{datos}', [MultasController::class, 'eliminar'])->name('eliminar');

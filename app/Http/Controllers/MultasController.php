@@ -43,8 +43,15 @@ class MultasController extends Controller
         $datos->vehiculo = $request->vehiculo;
         $datos->valor_permiso = $request->valor_permiso;
         $datos->save();
-       return redirect()->route('editar',$datos);
+       return redirect()->route('editar',$datos);   
        //return $datos;
 
     }
+
+    public function eliminar($id){
+        $id = datos_vehiculos::findOrFail($id);
+        $id->delete();
+        return redirect()->route('datos');
+    }
+
 }
