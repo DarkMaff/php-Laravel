@@ -29,9 +29,11 @@
   <td>{{$item->intereses_ajustes}}</td>
   <td>{{$item->multas_impagas}}</td>
   <td>{{$item->subtotal}}</td>
-  
+  <td><a href="{{route('editar',$item->id)}}" class="btn btn-primary">Editar</a></td>
+  <td><a href="{{$item->id}}" class="btn btn-primary">Eliminar</a></td> 
 </tr>
-@endforeach
+      @endforeach
 </thead>
 </table>
+{{$datos->links()}}
 @endsection

@@ -17,7 +17,6 @@
   <body>
     <div class="container">
       <a href="{{ route('crear') }}" class="btn btn-primary">Crear</a>
-      <a href="{{ route('editar') }}" class="btn btn-primary">Editar</a>
       <a href="{{ route('datos') }}" class="btn btn-primary">Consulta</a>
     </div>
     <div class="container">

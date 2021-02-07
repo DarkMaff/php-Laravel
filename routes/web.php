@@ -44,11 +44,13 @@ Route::post('crear',[MultasController::class ,'store'])->name('crear.store');
 /*Route::get('multas', function () {
     return view('multas');
 })->name('multas');*/
-
-Route::get('editar',[MultasController::class, 'datosMultas'])->name('editar');
+Route::get('editar',[MultasController::class, 'show'])->name('editar.show');
+Route::get('editar/{id?}',[MultasController::class, 'datosMultas'])->name('editar');
 
 /*Route::get('datos', function () {
     return view('datos');
 })->name('datos');*/
 
 Route::get('datos',[MultasController::class, 'datosVehiculos'])->name('datos');
+
+Route::post('datos/{datos}', [MultasController::class, 'update'])->name('update');
