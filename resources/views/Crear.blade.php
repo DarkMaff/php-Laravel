@@ -25,7 +25,7 @@
 @endsection
 @section('seccion')
 <H1>Crear Datos</H1>
-@error('patente')
+@error('seccion')
     
 @enderror
 <form action="{{route('crear.store')}}" method="POST">

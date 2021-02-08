@@ -18,7 +18,6 @@ class MultasController extends Controller
             'patente'=>'required',
             'vehiculo'=>'required',
             'valor_permiso'=>'required'
-
         ]);
 
        $datos = new datos_vehiculos;
@@ -26,28 +25,25 @@ class MultasController extends Controller
        $datos->vehiculo = $request->vehiculo;
        $datos->valor_permiso = $request->valor_permiso;
        $datos->save();
-       
-       //$datos = json_decode(array());
-       //return $datos;
-       //$datos = $request->input('datos');
-      return redirect()->route('datos',$datos);
+
+      return redirect()->route('crear',$datos);
     }
 
     public function show($id){
         $id = datos_vehiculos::findOrFail($id);
-        //return view('editar.show',compact('id'));
+
         return redirect()->route('editar.show',$id);
     }   
 
     public function datosMultas(datos_vehiculos $id){
         return view('editar',$id);
-        //return $id;
+    
     }
 
     public function datosVehiculos(){
         $datos = datos_vehiculos::paginate();
         return view('datos',compact('datos'));
-        //return $datos->toArray();
+ 
     }
 
     public function update(request $request, datos_vehiculos $datos){
@@ -57,7 +53,7 @@ class MultasController extends Controller
         $datos->valor_permiso = $request->valor_permiso;
         $datos->save();
        return redirect()->route('editar',$datos);   
-       //return $datos;
+    
 
     }
 
