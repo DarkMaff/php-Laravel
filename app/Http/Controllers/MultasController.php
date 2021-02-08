@@ -13,17 +13,30 @@ class MultasController extends Controller
         return view('crear');       
     }
     public function store(request $request){
+
+        $request->validate([
+            'patente'=>'required',
+            'vehiculo'=>'required',
+            'valor_permiso'=>'required'
+
+        ]);
+
        $datos = new datos_vehiculos;
        $datos->patente = $request->patente;
        $datos->vehiculo = $request->vehiculo;
        $datos->valor_permiso = $request->valor_permiso;
        $datos->save();
-      return redirect()->route('show',$datos);
+       
+       //$datos = json_decode(array());
+       //return $datos;
+       //$datos = $request->input('datos');
+      return redirect()->route('datos',$datos);
     }
 
     public function show($id){
         $id = datos_vehiculos::findOrFail($id);
-        return view('editar.show',compact('id'));
+        //return view('editar.show',compact('id'));
+        return redirect()->route('editar.show',$id);
     }   
 
     public function datosMultas(datos_vehiculos $id){

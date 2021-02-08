@@ -25,11 +25,26 @@
 @endsection
 @section('seccion')
 <H1>Crear Datos</H1>
+@error('patente')
+    
+@enderror
 <form action="{{route('crear.store')}}" method="POST">
     @csrf
-    <input type="text" name="patente" placeholder="agregar Patente" class="form-control mb2">
-    <input type="text" name="vehiculo" placeholder="agregar Modelo de Vehiculo" class="form-control mb2">
-    <input type="text" name="valor_permiso" placeholder="agregar Valor del Permiso" class="form-control mb2">
+    <input type="text" name="patente" placeholder="agregar Patente" value="{{old('patente')}}" class="form-control mb2">
+    @error('patente')
+      <small>*{{$message}}</small>
+    @enderror
+    <br> 
+    <input type="text" name="vehiculo" placeholder="agregar Modelo de Vehiculo" value="{{old('vehiculo')}}" class="form-control mb2">
+    @error('vehiculo')
+      <small>*{{$message}}</small>
+    @enderror
+    <br>
+    <input type="text" name="valor_permiso" placeholder="agregar Valor del Permiso" value="{{old('valor_permiso')}}" class="form-control mb2">
+    @error('valor_permiso')
+      <small>*{{$message}}</small>
+    @enderror
+    <br> 
     <button class="btn btn-primary btn block" type="submit">Agregar</button>
     </form>
 @endsection

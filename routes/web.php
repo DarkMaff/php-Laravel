@@ -39,7 +39,7 @@ Route::get('/', PagesController::class);// invoco al controlador para que me tra
 
 //Route::get('galerias', 'PagesController@galerias')->name('foto');// le damos un nombre para ubicarlo mejor en los href y lo reubicamos al controlador PageController
 Route::get('crear',[MultasController::class ,'crear'])->name('crear');
-Route::post('crear',[MultasController::class ,'store'])->name('crear.store');
+//Route::post('crear',[MultasController::class ,'store'])->name('crear.store');
 
 /*Route::get('multas', function () {
     return view('multas');
@@ -53,5 +53,5 @@ Route::get('editar/{id?}',[MultasController::class, 'datosMultas'])->name('edita
 
 Route::get('datos',[MultasController::class, 'datosVehiculos'])->name('datos');
 
-Route::put('datos/{datos}', [MultasController::class, 'update'])->name('update');
-Route::delete('datos/{datos}', [MultasController::class, 'eliminar'])->name('eliminar');
+//Route::put('datos/{datos}', [MultasController::class, 'update'])->name('update');
+//Route::delete('datos/{datos}', [MultasController::class, 'eliminar'])->name('eliminar');
